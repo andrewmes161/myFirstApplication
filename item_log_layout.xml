@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/itemName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:textSize="30sp"
+        android:hint="Item Name"
+        app:layout_constraintRight_toleftOf="@+id/amountEditText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/amountEditText"
+        android:layout_width="50dp"
+        android:textSize="30sp"
+        android:hint=" #"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toLeftOf="@id/addButton"
+        app:layout_constraintLeft_toRightOf="@+id/itemName"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/addButton"
+        android:text="Add"
+        android:onClick="addButtonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toRightOf="@id/amountEditText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/clearButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:id="@+id/entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:onClick="deleteEntryClick"
+                    />
+            <TextView
+                android:id="@+id/namePrintText"
+                android:layout_width="1.15in"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:hint="Item Name"
+                />
+            <TextView
+                android:id="@+id/amountPrintText"
+                android:layout_width="0.25in"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:hint="#"
+                />
+            <Button
+                android:id="@+id/plusButton"
+                android:onClick="plusOneClick"
+                android:layout_width="0.25in"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:textSize="15sp"
+                />
+            <Button
+                android:id="@+id/minusButton"
+                android:onClick="minusOneClick"
+                android:layout_width="0.25in"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        android:onClick="clearButtonClick"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintleft_toLeftOf="parent"
+        />
+
+    <Button
+        android:id="@+id/downloadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        android:onClick="downloadButtonClick"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
